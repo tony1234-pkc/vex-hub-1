@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VEX Hub | مركز التحميلات</title>
+    <!-- مكتبة الأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #0b0d12;
+            --card-bg: #131722;
+            --border-color: #202637;
+            --accent-color: #3b82f6;
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --yt-color: #ef4444;
+            --discord-color: #5865f2;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+                linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 100% 100%, 30px 30px, 30px 30px;
+        }
+
+        /* زر الديسكورد العلوي العائم */
+        .top-discord-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background-color: var(--discord-color);
+            color: #ffffff;
+            padding: 10px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            box-shadow: 0 4px 14px rgba(88, 101, 242, 0.4);
+            transition: all 0.2s ease;
+            z-index: 100;
+        }
+
+        .top-discord-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(88, 101, 242, 0.6);
+            background-color: #4752c4;
+        }
+
+        .top-discord-btn i {
+            font-size: 18px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 32px 24px;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .profile-header h1 {
+            font-size: 26px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .profile-header p {
+            color: var(--text-secondary);
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 28px;
+        }
+
+        .links-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 14px 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.07);
+            border-color: #3b82f6;
+            transform: translateY(-1px);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn-main {
+            background: var(--accent-color);
+            border-color: var(--accent-color);
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .btn-main:hover {
+            background: #2563eb;
+            border-color: #2563eb;
+        }
+
+        .btn-yt:hover {
+            border-color: var(--yt-color);
+        }
+
+        .btn-back {
+            background: transparent;
+            border-color: transparent;
+            color: var(--text-secondary);
+            font-size: 14px;
+            padding: 8px;
+        }
+
+        .btn-back:hover {
+            background: rgba(255, 255, 255, 0.04);
+            color: var(--text-primary);
+        }
+
+        .badge {
+            font-size: 11px;
+            background: rgba(59, 130, 246, 0.15);
+            color: var(--accent-color);
+            padding: 2px 8px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .footer {
+            margin-top: 24px;
+            font-size: 12px;
+            color: var(--text-secondary);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 16px;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- زر الديسكورد العائم في أعلى الشاشة -->
+    <a href="https://discord.gg/fchagXPXv" target="_blank" class="top-discord-btn">
+        <i class="fa-brands fa-discord"></i>
+        <span>Discord</span>
+    </a>
+
+    <div class="container">
+        <!-- الواجهة الرئيسية -->
+        <div id="home-view">
+            <div class="profile-header">
+                <h1>VEX Hub</h1>
+                <p>مرحباً بك. جميع مابات العوالم والمودات وملحقات المونتاج الخاصة بنا متوفرة للتحميل أدناه.</p>
+            </div>
+            
+            <button class="btn btn-main" onclick="switchView('downloads-view')">
+                عرض روابط التحميل
+            </button>
+        </div>
+
+        <!-- صفحة الروابط والتحميلات -->
+        <div id="downloads-view" class="hidden">
+            <div class="profile-header">
+                <h1>قائمة الملفات</h1>
+                <p>اختر الملف الذي ترغب في تحميلة</p>
+            </div>
+
+            <div class="links-group">
+                <!-- قناة اليوتيوب -->
+                <a href="https://youtube.com/@vex-00k?si=fHo51ndERyIfMUPk" target="_blank" class="btn btn-yt">
+                    <i class="fa-brands fa-youtube" style="color: #ef4444;"></i> قناة اليوتيوب
+                </a>
+
+                <!-- تحميل ماب PvP -->
+                <a href="https://www.mediafire.com/file/56a3x3thfa41nm4/map_pvp_1.21.1.zip/file" target="_blank" class="btn">
+                    تحميل ماب PvP <span class="badge">1.21.1</span>
+                </a>
+
+                <!-- حزمة المودات -->
+                <a href="YOUR_MODS_LINK_HERE" target="_blank" class="btn">
+                    حزمة المودات (Mods Pack)
+                </a>
+
+                <!-- ملحقات المونتاج -->
+                <a href="https://www.mediafire.com/file/oy2l8rq0o4pn25q/ملحقات.zip/file" target="_blank" class="btn">
+                    ملحقات المونتاج (Assets)
+                </a>
+
+                <!-- حزمة الملمس -->
+                <a href="#" target="_blank" class="btn">
+                    حزمة الملمس (Resource Pack)
+                </a>
+
+                <button class="btn btn-back" onclick="switchView('home-view')" style="margin-top: 10px;">
+                    العودة للرئيسية
+                </button>
+            </div>
+        </div>
+
+        <div class="footer">
+            © VEX Hub. جميع الحقوق محفوظة.
+        </div>
+    </div>
+
+    <script>
+        function switchView(viewId) {
+            document.getElementById('home-view').classList.add('hidden');
+            document.getElementById('downloads-view').classList.add('hidden');
+            
+            document.getElementById(viewId).classList.remove('hidden');
+        }
+    </script>
+
+</body>
+</html>
