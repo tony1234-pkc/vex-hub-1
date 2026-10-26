@@ -1,0 +1,16 @@
+{
+  "name": "ARROW Hub",
+  "short_name": "ARROW",
+  "start_url": "/vex-hub-1/",
+  "display": "standalone",
+  "background_color": "#121212",
+  "theme_color": "#1f1f1f",
+  "icons": [
+    {
+      "src": "InShot_20261026_155751051.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ]
+}
